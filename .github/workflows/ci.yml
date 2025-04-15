@@ -28,11 +28,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Authenticate with GitHub Package Registry
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
-      - name: Tag new version
+      - name: Bump version
         run: npm version patch --no-git-tag-version
 
-      - name: Publish new version
+      - name: Authenticate npm with GitHub token
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Publish to npm
         run: npm publish
