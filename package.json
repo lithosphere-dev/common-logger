@@ -1,6 +1,6 @@
 {
   "name": "@lithosphere-dev/common-logger",
-  "version": "0.0.19",
+  "version": "0.0.1",
   "description": "This will provide the same logger service to all nestjs projects.",
   "author": "Bastian PEIRE",
   "license": "MIT",
