@@ -11,10 +11,10 @@ export class CommonLoggerService {
     this.logger = winston.createLogger({
       transports: [
         new winston.transports.Console(),
-        (this.lokiTransport = new WinstonLoki({
+        this.lokiTransport = new WinstonLoki({
           host: process.env.LOKI_URL || 'http://localhost:3100',
           labels: { job: process.env.LOGGER_APP_LABEL || 'unknown' },
-        })),
+        }),
       ],
     });
   }

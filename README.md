@@ -21,8 +21,13 @@ A simple and customizable logger for Nestjs applications. Supports multiple log 
 npm install common-logger
 ```
 
-### Import and Setup
 
+### Import and Setup
+Add variables in your envfile:
+```bash
+LOGGER_APP_LABEL=your_app_label
+LOKI_URL=http://localhost:3100
+```
 Import the CommonLoggerModule in your module:
 ```typescript
 import { CommonLoggerModule } from '@lithosphere-dev/common-logger';
@@ -49,6 +54,8 @@ this.logger.log(`Received message: ${message}`);
 MIT
 
 ## Dev config
+
+Enable Git hooks for commit messages:
 ```bash
 git config core.hooksPath .githooks
 ```
