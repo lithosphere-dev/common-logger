@@ -1,22 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import winston from 'winston';
-import WinstonLoki from 'winston-loki'; 
+import { winstonLogger } from './winston-loki.instance';
 
 @Injectable()
 export class CommonLoggerService {
-  private readonly lokiTransport: WinstonLoki;
   private logger: winston.Logger;
 
   constructor() {
-    this.logger = winston.createLogger({
-      transports: [
-        new winston.transports.Console(),
-        (this.lokiTransport = new WinstonLoki({
-          host: process.env.LOKI_URL || 'http://localhost:3100',
-          labels: { job: process.env.LOGGER_APP_LABEL || 'unknown' },
-        })),
-      ],
-    });
+    this.logger = winstonLogger;
   }
 
   debug(message: string) {

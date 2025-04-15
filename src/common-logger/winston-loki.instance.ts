@@ -7,7 +7,7 @@ const lokiTransport = new LokiTransport({
   json: true,
 });
 
-export const winstonLogger = winston.createLogger({
+export const winstonLogger: winston.Logger = winston.createLogger({
   level: 'info',
   transports: [
     new winston.transports.Console({
