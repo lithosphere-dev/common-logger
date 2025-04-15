@@ -47,3 +47,8 @@ this.logger.log(`Received message: ${message}`);
 ## License
 
 MIT
+
+## Dev config
+```bash
+git config core.hooksPath .githooks
+```
