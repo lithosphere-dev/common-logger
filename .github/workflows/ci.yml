@@ -31,7 +31,8 @@ jobs:
       - name: Bump version
         run: npm version patch --no-git-tag-version
 
+      - name: Authenticate npm with GitHub token
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Publish to npm
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
