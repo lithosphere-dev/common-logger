@@ -32,11 +32,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Ensure git status is clean before bumping version
+
           git add .
           git commit -m "Save changes before version bump" || echo "No changes to commit"
+
           npm version patch
-          git push origin HEAD:release --follow-tags
+
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/lithosphere-dev/common-logger.git HEAD:release --follow-tags
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
