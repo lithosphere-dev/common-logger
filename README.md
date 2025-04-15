@@ -11,7 +11,7 @@ A simple and customizable logger for Nestjs applications. Supports multiple log 
 - ✅ Minimal setup  
 - 📝 Log levels: `debug`, `info`, `warn`, `error`  
 - 📦 Lightweight and efficient  
-- 📡 Supports console and Loki output  
+- 📡 Supports console and Loki output
 
 ## Getting Started
 
@@ -44,20 +44,6 @@ this.logger.log(`Received message: ${message}`);
 
 ---
 
-## Publishing a New Version
-
-Login to the GitHub package registry:
-```bash
-npm login --scope=@lithosphere-dev --auth-type=legacy --registry=https://npm.pkg.github.com
-```
-
-Then, type the command:
-```bash
-npm run delivery:<major | minor | patch >
-```
-
-# License
+## License
 
 MIT
-
-Made with ❤️ by Lithosphere
